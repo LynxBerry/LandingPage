@@ -1,0 +1,19 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Landing Page2</title>
+	</head>
+	<body>
+		<div id="app">
+			{{ message }}
+			<!-- will be rendered properly-->
+			<my-menubar :menuitems="list"> </my-menubar>
+		</div>
+		
+		<script src="https://unpkg.com/vue"></script>
+		<script src="js/somejs2.js"></script>
+	</body>
+
+</html>
