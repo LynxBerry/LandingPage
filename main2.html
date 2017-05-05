@@ -4,12 +4,23 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Landing Page2</title>
+        <link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<div id="app">
-			{{ message }}
 			<!-- will be rendered properly-->
-			<my-menubar :menuitems="jobs"> </my-menubar>
+            <main-section>
+                <div class="container">
+                         <div id="namelabel"> Gr. James Zhao </div>
+			             <my-menubar :menuitems="list"> </my-menubar>
+                </div>
+                         <div id="mainMsg">
+                             <p> {{ message }} </p>
+                             <p>    {{ message2 }} </p>
+
+                         </div>
+
+            </main-section>
 		</div>
 
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
