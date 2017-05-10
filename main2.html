@@ -8,11 +8,13 @@
 	</head>
 	<body>
 		<div id="app">
-			<!-- will be rendered properly-->
+			<!-- will be rendered properly if the data is loaded-->
+			<!-- use v-if to make sure rendering after data is ready-->
+			<template v-if="payload !=={} ">
             <main-section>
                 <div class="container">
                          <div id="namelabel"> Gr. James Zhao </div>
-			             <my-menubar :menuitems="list"> </my-menubar>
+			             <my-menubar :menuitems="payload.MenuBar" :lang="lang"> </my-menubar>
                 </div>
                          <div id="mainMsg">
                              <p> {{ message }} </p>
@@ -37,6 +39,7 @@
                 <div id="innerfooter">{{footmessage}}</div>
 
             </div>
+				</template>
 		</div>
 
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>

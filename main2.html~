@@ -4,14 +4,42 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Landing Page2</title>
+        <link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<div id="app">
-			{{ message }}
 			<!-- will be rendered properly-->
-			<my-menubar :menuitems="list"> </my-menubar>
+            <main-section>
+                <div class="container">
+                         <div id="namelabel"> Gr. James Zhao </div>
+			             <my-menubar :menuitems="list"> </my-menubar>
+                </div>
+                         <div id="mainMsg">
+                             <p> {{ message }} </p>
+                             <p> {{ message2 }} </p>
+
+                         </div>
+
+            </main-section>
+            <div class="container">
+                <div class="title">{{titleMessage3}}</div>
+                <div class="section1">{{ message3 }}</div>
+            </div>
+            <div class="container grey">
+                <div class="title">{{titleMessage3}}</div>
+                <div class="section1">{{ message4 }}</div>
+            </div>
+            <div class="container">
+                <div class="title">{{titleMessage3}}</div>
+                <div class="section1">{{ message3 }}</div>
+            </div>
+            <div class="container" id="footer">
+                <div id="innerfooter">{{footmessage}}</div>
+
+            </div>
 		</div>
-		
+
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src="https://unpkg.com/vue"></script>
 		<script src="js/somejs2.js"></script>
 	</body>

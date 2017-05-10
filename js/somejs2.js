@@ -2,8 +2,8 @@
 //Have to register before root instance
 //It is registered globally, so it can be used across all the root instances
 Vue.component('my-menubar', {
-	props:['menuitems'],
-	template: '<div id="menubar"><my-menuitem v-for="menuitem in menuitems" v-bind:menuitem="menuitem" v-bind:key="menuitem.id"></my-menuitem></div>',
+	props:['menuitems','lang'],
+	template: '<div id="menubar"><my-menuitem v-for="menuitem in menuitems" v-bind:menuitem="menuitem[lang]" v-bind:key="menuitem.id"></my-menuitem></div>',
 	components:{
 		'my-menuitem':{
 			props: ['menuitem'],
@@ -31,8 +31,10 @@ var app = new Vue({
         message4: "more messages, more messages, more messages, more messages, more messages, more messages,more messages, more messages, more messages",
         titleMessage3: "THIS IS A TITLE",
 		list:["duck","panda","monkey"],
-        jobs:[],
-        footmessage: "\u00A9 2017 LynxBerry"
+        menus:[],
+        footmessage: "\u00A9 2017 LynxBerry",
+				payload:{},
+				lang:"en"
 	},
 
     mounted: function(){
@@ -46,10 +48,12 @@ var app = new Vue({
         fetchMenuList: function(){
             // bind this
             var _this = this;
-            axios.get('https://jsonplaceholder.typicode.com/users').then(function (response){
+            axios.get('data/data.json').then(function (response){
+							console.log(response.data);
                 console.log("hello panda2");
-                console.log(response);
-                _this.jobs = response.data ;
+
+                console.log(response.data.MenuBar);
+                _this.payload = response.data ;
             }).catch(function(error){
                 console.log(error);
             })
