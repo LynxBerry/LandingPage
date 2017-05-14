@@ -18,6 +18,33 @@ Vue.component('main-section',{
 
 });
 
+Vue.component('lang-switcher',{
+		props:['lang'],
+		data:function(){
+
+				return (this.lang === "en") ? {showlang:"中文"} : {showlang:"English"};
+			},
+		template:'<div v-on:click="switchLang">{{showlang}}</div>',
+		methods:{
+			switchLang: function () {
+				if(this.showlang === "English") {
+					this.showlang = "中文";
+					console.log("event en");
+					eventBus.$emit('langChange',"en");
+
+				}else{
+					this.showlang = "English";
+					console.log("event ch");
+					eventBus.$emit('langChange',"ch");
+
+				}
+			}
+		}
+
+
+});
+
+const eventBus = new Vue();
 //root instance
 //data flow in from root down to children
 var app = new Vue({
@@ -30,17 +57,18 @@ var app = new Vue({
         message3: "This is statement. This is statement. This is statement.",
         message4: "more messages, more messages, more messages, more messages, more messages, more messages,more messages, more messages, more messages",
         titleMessage3: "THIS IS A TITLE",
-		list:["duck","panda","monkey"],
+				list:["duck","panda","monkey"],
         menus:[],
         footmessage: "\u00A9 2017 LynxBerry",
 				payload:{},
 				lang:"en"
 	},
 
-    mounted: function(){
+    created: function(){
         console.log("hello panda");
 
         this.fetchMenuList();
+				eventBus.$on('langChange',this.changeLang);
 
     },
 
@@ -57,6 +85,11 @@ var app = new Vue({
             }).catch(function(error){
                 console.log(error);
             })
-        }
-    }
+        },
+				changeLang: function(mylang) {
+
+					this.lang = mylang;
+				}
+			}
+
 });

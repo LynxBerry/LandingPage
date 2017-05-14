@@ -10,11 +10,12 @@
 		<div id="app">
 			<!-- will be rendered properly if the data is loaded-->
 			<!-- use v-if to make sure rendering after data is ready-->
-			<template v-if="payload !=={} ">
+			<template v-if="Object.keys(payload).length !== 0">
             <main-section>
                 <div class="container">
-                         <div id="namelabel"> Gr. James Zhao </div>
+                         <div id="namelabel"> {{ payload.Banner[lang] }} </div>
 			             <my-menubar :menuitems="payload.MenuBar" :lang="lang"> </my-menubar>
+									 <lang-switcher :lang="lang"></lang-switcher>
                 </div>
                          <div id="mainMsg">
                              <p> {{ message }} </p>

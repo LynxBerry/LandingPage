@@ -4,7 +4,11 @@
     {"en":"Duck","ch":"鸭子"},
     {"en":"Chicken","ch":"鸡"},
     {"en":"Panda","ch":"熊猫"}
-  ]
+  ],
+  "Banner":{
+    "en": "6elements Management",
+    "ch": "六源素企业管理"
+  }
 
 
 
