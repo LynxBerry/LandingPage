@@ -1,14 +1,23 @@
 {
   "BackgroundPicUrl":"",
   "MenuBar": [
-    {"en":"Duck","ch":"鸭子"},
-    {"en":"Chicken","ch":"鸡"},
-    {"en":"Panda","ch":"熊猫"}
+    {"en":"HOME","ch":"主页"},
+    {"en":"ABOUT","ch":"关于"},
+    {"en":"TRAINING","ch":"培训"}
   ],
   "Banner":{
     "en": "6elements Management",
     "ch": "六源素企业管理"
+  },
+  "MainMessage":{
+    "en":"Are you communicating or just talking?",
+    "ch":"对话就能沟通吗?"
+  },
+  "MainMessage2":{
+    "en":"Everyone struggles with communication sometimes. No matter how hard we try, we can't always get through. So how can you reach people you've struggled with before? Is there a key to understanding the people we interact with... and ourselves?",
+    "ch":"我们跟人沟通有时会卡住，无论怎么努力好像都没有用。面对你沟通困难的人，怎么跟他们互动才有效呢？有没有一把钥匙能够打开人内心世界的大门，读懂对方也读懂自己？"
   }
+
 
 
 

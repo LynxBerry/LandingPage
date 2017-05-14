@@ -1,3 +1,9 @@
+Vue.component('elements6',{
+	template: '<div><div class="mybox" style="background-color:rgb(0,105,181);"></div><div class="mybox" style="background-color:rgb(120,34,120);"></div><div class="mybox" style="background-color:rgb(254,105,53);"></div><div class="mybox" style="background-color:rgb(164,85,34);" ></div><div class="mybox" style="background-color:rgb(255,208,65);"></div><div class="mybox" style="background-color:rgb(252,0,45);"></div></div>'
+	}
+
+);
+
 //register a component
 //Have to register before root instance
 //It is registered globally, so it can be used across all the root instances

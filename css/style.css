@@ -1,19 +1,24 @@
 #mainsection {
     background-color: black;
+    background-image: url("/pic/mt3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
+
 }
 
 #mainsection:after {
     content:"";
     display: table;
     clear: both;
+
 }
 
 #namelabel {
     float:left;
     border-width: 2px;
-    border-color: green;
     border-style: solid;
+    border-color: transparent;
     width: 350px;
     text-align: center;
     font-size: 30pt;
@@ -22,8 +27,9 @@
 #menubar {
     float:right;
     border-width: 2px;
-    border-color: green;
     border-style: solid;
+    border-color: transparent;
+    font-family: sans-serif;
 }
 
 #menubar:after{
@@ -38,11 +44,12 @@
     max-width: 800px;
     margin: 0 auto;
     margin-top: 150px;
+    font-family: sans-serif;
 }
 .menuitem {
     float:left;
     margin-left: 3px;
-    border-color: green;
+    border-color: transparent;
     border-width: 1px;
     border-style: solid;
     padding: 5px;
@@ -89,4 +96,13 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 20px;
+}
+
+.mybox {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  margin: 5px;
+  background-color: red;
+  float: left;
 }

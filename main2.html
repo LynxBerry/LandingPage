@@ -13,13 +13,18 @@
 			<template v-if="Object.keys(payload).length !== 0">
             <main-section>
                 <div class="container">
-                         <div id="namelabel"> {{ payload.Banner[lang] }} </div>
+
+                         <div id="namelabel">
+													  <div style="width:300px;font-family:sans-serif;">{{ payload.Banner.ch }}</div>
+													 <elements6></elements6>
+													 <div style="width:300px;font-size:20pt;font-family:sans-serif;">{{ payload.Banner.en }}</div>
+												 </div>
 			             <my-menubar :menuitems="payload.MenuBar" :lang="lang"> </my-menubar>
 									 <lang-switcher :lang="lang"></lang-switcher>
                 </div>
                          <div id="mainMsg">
-                             <p> {{ message }} </p>
-                             <p> {{ message2 }} </p>
+                             <p> {{ payload.MainMessage[lang] }} </p>
+                             <p> {{ payload.MainMessage2[lang] }} </p>
 
                          </div>
 
