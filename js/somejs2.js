@@ -1,5 +1,5 @@
 Vue.component('elements6',{
-	template: '<div><div class="mybox" style="background-color:rgb(0,105,181);"></div><div class="mybox" style="background-color:rgb(120,34,120);"></div><div class="mybox" style="background-color:rgb(254,105,53);"></div><div class="mybox" style="background-color:rgb(164,85,34);" ></div><div class="mybox" style="background-color:rgb(255,208,65);"></div><div class="mybox" style="background-color:rgb(252,0,45);"></div></div>'
+	template: '<div id="elements6" class="d-inline-block align-top"><div class="mybox" style="background-color:rgb(0,105,181);"></div><div class="mybox" style="background-color:rgb(120,34,120);"></div><div class="mybox" style="background-color:rgb(254,105,53);"></div><div class="mybox" style="background-color:rgb(164,85,34);" ></div><div class="mybox" style="background-color:rgb(255,208,65);"></div><div class="mybox" style="background-color:rgb(252,0,45);"></div></div>'
 	}
 
 );
@@ -35,13 +35,15 @@ Vue.component('lang-switcher',{
 			switchLang: function () {
 				if(this.showlang === "English") {
 					this.showlang = "中文";
-					console.log("event en");
-					eventBus.$emit('langChange',"en");
+					console.log("1event en");
+					this.$emit('lang-change',"en");
+					//eventBus.$emit('langChange',"en");
 
 				}else{
 					this.showlang = "English";
-					console.log("event ch");
-					eventBus.$emit('langChange',"ch");
+					console.log("1event ch");
+					this.$emit('lang-change',"ch");
+					//eventBus.$emit('langChange',"ch");
 
 				}
 			}
@@ -93,8 +95,9 @@ var app = new Vue({
             })
         },
 				changeLang: function(mylang) {
-
-					this.lang = mylang;
+					this.lang = (this.lang === "en")? "ch" : "en";
+					console.log("invoked");
+					//this.lang = mylang;
 				}
 			}
 
