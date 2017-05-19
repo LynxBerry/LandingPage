@@ -122,16 +122,30 @@
 .container-fluid {
   padding: 0px;
 }
-
 .overflow {
   position:absolute;
   top:9px;
-  right:160px;
-  display: block;
+  right:84px;
+  display: inline-block;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   margin-top: 0;
   color:#ccc;
   max-width:90%;
+}
+
+@media (min-width:768px){
+  .overflow {
+    position:absolute;
+    top:9px;
+    right:160px;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 0;
+    color:#ccc;
+    max-width:90%;
+  }
 }

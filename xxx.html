@@ -1,3 +1,10 @@
+<b-nav is-nav-bar class="overflow">
+
+<b-nav-item v-on:click="changeLang" class="" >{{lang === "en" ? "中文" : "English"}}</b-nav-item>
+
+</b-nav>
+
+
 <b-link class="navbar-brand" v-on:click="changeLang" >{{lang === "en" ? "中文" : "English"}}</b-link>
 
  <b-nav-toggle target="nav_collapse"></b-nav-toggle>

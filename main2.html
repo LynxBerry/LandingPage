@@ -21,22 +21,24 @@
 
 									<b-navbar toggleable  type="inverse" variant="primary"  sticky="top">
 
-
+<b-nav-toggle target="nav_collapse"></b-nav-toggle>
 
 								     <b-link class="navbar-brand" to="#">
+											 <div style="display:inline-block">
 											<elements6></elements6>
 								    		<div style="font-size:0.6em;margin-top:-14px;"> {{ payload.Banner[lang] }}</div>
+											</div>
 
 								     </b-link>
-<b-nav-toggle target="nav_collapse"></b-nav-toggle>
-<b-nav is-nav-bar class="ml-auto">
 
-<b-nav-item v-on:click="changeLang" class="overflow" >{{lang === "en" ? "中文" : "English"}}</b-nav-item>
+										 <b-nav is-nav-bar class="overflow">
 
-</b-nav>
-<b-collapse is-nav id="nav_collapse">
+										 <b-nav-item v-on:click="changeLang" class="" >{{lang === "en" ? "中文" : "English"}}</b-nav-item>
 
-  <b-nav is-nav-bar class="ml-auto" style="margin-right:0px">
+										 </b-nav>
+<b-collapse is-nav id="nav_collapse" >
+
+  <b-nav is-nav-bar class="ml-auto"  >
 
     <b-nav-item >Docs</b-nav-item>
     <b-nav-item >Contact Us</b-nav-item>
