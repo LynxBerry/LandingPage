@@ -118,7 +118,7 @@
 }
 
 .bg-primary {
-    background-color: black!important;
+    background-color: rgba(0,0,0,0.9)!important;
 }
 .container-fluid {
   padding: 0px;
