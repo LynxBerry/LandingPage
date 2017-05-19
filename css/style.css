@@ -73,8 +73,9 @@
 }
 
 .title {
-    font-size: 25pt;
+    font-size: 1.5em;
     font-family: sans-serif;
+    font-weight: bold;
     margin: 0 auto;
     max-width: 800px;
     text-align: center;

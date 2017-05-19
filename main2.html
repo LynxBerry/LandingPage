@@ -1,86 +1,65 @@
 <!doctype html>
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Landing Page2</title>
-				<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap@next/dist/css/bootstrap.min.css"/>
-				<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
-        <link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<div id="app" class="container-fluid">
-			<!-- will be rendered properly if the data is loaded-->
-			<!-- use v-if to make sure rendering after data is ready-->
-			<template v-if="Object.keys(payload).length !== 0">
+        <title>Landing Page</title>
+            <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap@next/dist/css/bootstrap.min.css"/>
+            <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+            <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <!--The container-fluid class expands to full width of browser window.-->
+        <div id="app" class="container-fluid">
+		<!-- use v-if to check whether data is ready-->
+		<template v-if="Object.keys(payload).length !== 0">
+            <b-navbar toggleable  type="inverse" variant="primary"  sticky="top">
+                <!--Make sure toggle exists before other navbar elements, otherwise it won't look right on mobile device.-->
+                <b-nav-toggle target="nav_collapse"></b-nav-toggle>
+                <!--company logo-->
+                <b-link class="navbar-brand" to="#">
+                    <div style="display:inline-block">
+                        <elements6></elements6>
+        	            <div style="font-size:0.6em;margin-top:-14px;"> {{ payload.Banner[lang] }}</div>
+                    </div>
+                </b-link>
+                <!--Self-defined overflow class to ensure the language switcher menu item won't collapse on mobile device.-->
+				<b-nav is-nav-bar class="overflow">
+                    <b-nav-item v-on:click="changeLang" class="" >{{lang === "en" ? "中文" : "English"}}</b-nav-item>
+                </b-nav>
+
+                <b-collapse is-nav id="nav_collapse" >
+                    <b-nav is-nav-bar class="ml-auto"  >
+                        <b-nav-item >Docs</b-nav-item>
+                        <b-nav-item >Contact Us</b-nav-item>
+                    </b-nav>
+                </b-collapse>
+			</b-navbar>
+
+            <!--main section-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="mainsection">
+                        <p style="font-weight:bold;"> {{ payload.MainMessage[lang] }}</p>
+                        <p> {{ payload.MainMessage2[lang] }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <img :src="payload.section1pic" style="width:90%;margin:15px;"></img>
+                </div>
+                <div class="col-md-7">
+                    <div class="title" style="width:90%">{{ payload.section1title[lang] }}</div>
+                    <div class="section1" style="width:90%">{{ payload.section1msg[lang] }}</div>
+                </div>
+            </div>
 
 
-
-
-									<b-navbar toggleable  type="inverse" variant="primary"  sticky="top">
-
-<b-nav-toggle target="nav_collapse"></b-nav-toggle>
-
-								     <b-link class="navbar-brand" to="#">
-											 <div style="display:inline-block">
-											<elements6></elements6>
-								    		<div style="font-size:0.6em;margin-top:-14px;"> {{ payload.Banner[lang] }}</div>
-											</div>
-
-								     </b-link>
-
-										 <b-nav is-nav-bar class="overflow">
-
-										 <b-nav-item v-on:click="changeLang" class="" >{{lang === "en" ? "中文" : "English"}}</b-nav-item>
-
-										 </b-nav>
-<b-collapse is-nav id="nav_collapse" >
-
-  <b-nav is-nav-bar class="ml-auto"  >
-
-    <b-nav-item >Docs</b-nav-item>
-    <b-nav-item >Contact Us</b-nav-item>
-
-  </b-nav>
-
-
-
-</b-collapse>
-								   </b-navbar>
-								 </div>
-
-
-									 <!--
-                         <div id="namelabel">
-													  <div style="width:300px;font-family:sans-serif;">{{ payload.Banner.ch }}</div>
-													 <elements6></elements6>
-													 <div style="width:300px;font-size:20pt;font-family:sans-serif;">{{ payload.Banner.en }}</div>
-												 </div>
-											 -->
-											 <!--
-			             <my-menubar :menuitems="payload.MenuBar" :lang="lang"> </my-menubar>
-
-
-								 -->
-								 <!--<lang-switcher :lang="lang" v-on:lang-change="changeLang"></lang-switcher>-->
-
-								  <div class="row">
-										<div id="mainsectionxx" class="col-lg-12">
-												<div id="mainsection">
-								             <p style="font-weight:bold;"> {{ payload.MainMessage[lang] }}</p>
-														 <p> {{ payload.MainMessage2[lang] }}</p>
-												</div>
-										</div>
-
-								  </div>
-
-
-								 <div class="container">
-								 <div class="title">{{titleMessage3}}</div>
-								 <div class="section1">{{ message3 }}</div>
-								 </div>
 								 <div class="container grey">
 								 <div class="title">{{titleMessage3}}</div>
 								 <div class="section1">{{ message4 }}</div>
