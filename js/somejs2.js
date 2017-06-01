@@ -69,7 +69,7 @@ var app = new Vue({
         menus:[],
         footmessage: "\u00A9 2017 LynxBerry",
 				payload:{},
-				lang:"en"
+				lang:"ch"
 	},
 
     created: function(){
