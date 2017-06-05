@@ -6,9 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Landing Page</title>
-            <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap@next/dist/css/bootstrap.min.css"/>
-            <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
-            <link rel="stylesheet" href="css/style.css">
+            <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+            <link type="text/css" rel="stylesheet" href="css/bootstrap-vue.css"/>
+            <link rel="stylesheet" href="css/my-style.css">
     </head>
 
     <body>
@@ -22,8 +22,9 @@
                 <!--company logo-->
                 <b-link class="navbar-brand" to="#">
                     <div style="display:inline-block">
+                        <div style="font-size:0.6em;margin-top:0px;"> {{ payload.Banner["ch"] }}</div>
                         <elements6></elements6>
-        	            <div style="font-size:0.6em;margin-top:-14px;"> {{ payload.Banner[lang] }}</div>
+        	            <div style="font-size:0.6em;margin-top:-14px;"> {{ payload.Banner["en"] }}</div>
                     </div>
                 </b-link>
                 <!--Self-defined overflow class to ensure the language switcher menu item won't collapse on mobile device.-->
@@ -82,12 +83,12 @@
 				</template>
 		</div>
 
-		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-		<script src="https://unpkg.com/vue"></script>
-		<script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
-		<script src="//unpkg.com/tether@latest/dist/js/tether.min.js"></script>
-		<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
-		<script src="js/somejs2.js"></script>
+		<script src="js/axios.min.js"></script>
+		<script src="js/vue_2_3.js"></script>
+		<script src="js/polyfill.min.js"></script>
+		<script src="js/tether.min.js"></script>
+		<script src="js/bootstrap-vue.js"></script>
+		<script src="js/my-js.js"></script>
 	</body>
 
 </html>

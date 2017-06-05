@@ -52,43 +52,34 @@ Vue.component('lang-switcher',{
 
 });
 
-const eventBus = new Vue();
 //root instance
 //data flow in from root down to children
 var app = new Vue({
 	el: '#app',
 	data: {
-		message: "Hello Vue! This is the main message. I \
-        am trying to be very long. I am trying to be very long.\
-        I am trying to be very long. I am trying to be very long.",
         message2: "This is a relatively short message. I show I am here.",
         message3: "This is statement. This is statement. This is statement.",
         message4: "more messages, more messages, more messages, more messages, more messages, more messages,more messages, more messages, more messages",
         titleMessage3: "THIS IS A TITLE",
-				list:["duck","panda","monkey"],
-        menus:[],
         footmessage: "\u00A9 2017 LynxBerry",
-				payload:{},
-				lang:"ch"
+		payload:{},
+		lang:"ch"
 	},
 
     created: function(){
-        console.log("hello panda");
+        console.log("tracer:root component created."); //tracer
 
-        this.fetchMenuList();
-				eventBus.$on('langChange',this.changeLang);
+        this.fetchData();
+
 
     },
 
     methods:{
-        fetchMenuList: function(){
+        fetchData: function(){
             // bind this
             var _this = this;
             axios.get('data/data.json').then(function (response){
-							console.log(response.data);
-                console.log("hello panda2");
-
-                console.log(response.data.MenuBar);
+                console.log("tracer:data fetched"); //tracer
                 _this.payload = response.data ;
             }).catch(function(error){
                 console.log(error);

@@ -7,7 +7,7 @@
     padding: 15px;
     font-size: 1.3em;
     text-align: center;
-    
+
 
 }
 
@@ -140,7 +140,7 @@
 @media (min-width:768px){
   .overflow {
     position:absolute;
-    top:9px;
+    top:19px;
     right:160px;
     display: block;
     text-overflow: ellipsis;
