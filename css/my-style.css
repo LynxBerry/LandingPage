@@ -140,7 +140,7 @@
 @media (min-width:768px){
   .overflow {
     position:absolute;
-    top:19px;
+    top:16px;
     right:160px;
     display: block;
     text-overflow: ellipsis;
