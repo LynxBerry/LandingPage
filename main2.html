@@ -24,14 +24,15 @@
                     <img src="pic/logo.svg" style="width:100px"> </img>
                 </b-link>
                 <!--Self-defined overflow class to ensure the language switcher menu item won't collapse on mobile device.-->
-				<b-nav is-nav-bar class="overflow">
+				<b-nav is-nav-bar class="overflow2">
                     <b-nav-item v-on:click="changeLang" class="" >{{lang === "en" ? "中文" : "English"}}</b-nav-item>
                 </b-nav>
 
                 <b-collapse is-nav id="nav_collapse" >
                     <b-nav is-nav-bar class="ml-auto"  >
-                        <b-nav-item >Docs</b-nav-item>
-                        <b-nav-item >Contact Us</b-nav-item>
+                        <b-nav-item v-on:click="changeLang" class="overflow" >{{lang === "en" ? "中文" : "English"}}</b-nav-item>
+                        <b-nav-item style="text-align:right">Docs</b-nav-item>
+                        <b-nav-item style="text-align:right">Contact Us</b-nav-item>
                     </b-nav>
                 </b-collapse>
 			</b-navbar>

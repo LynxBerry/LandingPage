@@ -126,7 +126,16 @@
 .container-fluid {
  padding:0px;
 }
-.overflow {
+
+
+@media (max-width:767px){
+  .overflow {
+      display: none;
+
+  }
+}
+
+.overflow2 {
   position:absolute;
   top:9px;
   right:84px;
@@ -140,11 +149,11 @@
 }
 
 @media (min-width:768px){
-  .overflow {
+  .overflow2 {
     position:absolute;
     top:16px;
     right:160px;
-    display: block;
+    display: none;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -153,6 +162,8 @@
     max-width:90%;
   }
 }
+
+
 
 .row {
     margin:0px;
